@@ -1,0 +1,32 @@
+<!-- If tutorials is null or its length is zero, show the message -->
+<div *ngIf="false" class="mt-5 col-md-8 mx-auto">
+    <div class="card">
+        <div class="card-header">Info</div>
+        <div class="card-body">
+            Please upload a file! No content is found
+        </div>
+    </div>
+</div>
+
+
+<!-- Check if tutorials is not null and its length is greater than zero -->
+<div  class="container mt-5 text-center">
+    <div class="row my-5 col-md-12">
+        <div class="col-md-6 mx-auto">
+            <h2 *ngIf="tutorials != null &&  tutorials.length > 0">Pie Chart</h2>
+            <canvas id="pieChart"></canvas>
+        </div>
+        <div class="col-md-6 mx-auto">
+            <h2 *ngIf="tutorials != null &&  tutorials.length > 0">Stacked bar Chart</h2>
+            <canvas id="stackedChart"></canvas>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-md-8 mx-auto">
+            <h2 *ngIf="tutorials != null &&  tutorials.length > 0">Bubble Chart</h2>
+            <canvas id="bubbleChart"></canvas>
+        </div>
+    </div>
+</div>
+
+

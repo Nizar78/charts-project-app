@@ -1,0 +1,37 @@
+<div class="mt-5 container">
+
+    <div class="card">
+        <div class="card-header ">
+            <h3 class="p-2">Upload CSV File</h3>
+        </div>
+        <div class="card-body my-3">
+            <div *ngIf="currentFile" class="progress">
+                <div
+                  class="progress-bar progress-bar-info progress-bar-striped"
+                  role="progressbar"
+                  attr.aria-valuenow="{{ progress }}"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  [ngStyle]="{ width: progress + '%' }"
+                >
+                  {{ progress }}%
+                </div>
+            </div>
+              
+              <label class="btn btn-default">
+                <input type="file" (change)="selectFile($event)" />
+              </label>
+              
+              <button class="btn btn-success" [disabled]="!selectedFiles" (click)="uploadFile()">
+                Upload
+              </button>
+              
+              <div *ngIf="message" class="alert alert-light" role="alert">{{ message }}</div>
+
+
+        </div>
+    </div>
+    
+      
+    
+</div>

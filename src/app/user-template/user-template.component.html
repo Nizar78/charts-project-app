@@ -1,0 +1,29 @@
+<section>
+    <div class="row">
+      <div class="col-md-2 bg-dark text-white p-0" style="min-height: 900px;">
+          <div class="py-5 px-4 text-center fs-4" style='font-family: "Goudy Old Style"'>Charts Project</div>
+          <div class="py-5">
+            <button routerLink="/user/dashboard" class="p-4 text-center w-100 btn btn-outline-light btn-bottom-border " >
+              <i class="bi bi-speedometer2"></i>
+              <span class="px-4">Dashboard</span>
+            </button>
+            <button routerLink="/user/datatable" class="p-4 text-center w-100 btn btn-outline-light btn-bottom-border " >
+              <i class="bi bi-clipboard-data"></i>
+              <span class="px-4">Datatable</span>
+            </button>
+            <button routerLink="/user/fileupload" class="p-4 text-center w-100 btn btn-outline-light btn-bottom-border " >
+              <i class="bi bi-upload"></i>
+              <span class="px-4">Fileupload</span>
+            </button>
+            <button (click)="logout()" class="p-4 text-center w-100 btn btn-outline-light btn-bottom-border " >
+              <i class="bi bi-door-closed"></i>
+              <span class="px-4">Logout</span>
+            </button>
+          </div>
+      </div>
+      <div class="col-md-10">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  
+</section>

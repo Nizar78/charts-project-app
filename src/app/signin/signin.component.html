@@ -1,0 +1,34 @@
+<div class="mt-5"> 
+    <div class="card col-md-4 mx-auto border-2">
+        <div class="card-header p-3 text-light text-light bg-dark " >
+            <div class="d-flex ">
+                <div class="col-md-6 ">
+                    <h3 class="fs-3 px-4">Authentification</h3>
+                </div>
+                <div class="col-md-6 text-right d-flex justify-content-end">
+                    <a  class="btn btn-primary "  routerLink="/signup">SignUp</a>
+                </div>
+
+            </div>
+           
+
+        </div>
+        <div class="card-body">
+            <form [formGroup]="formLogin" (ngSubmit)="login()">
+                <div *ngIf="message" class="alert alert-danger" role="alert">
+                    {{message}}
+                  </div>
+                <div class="form-group my-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" formControlName="username" placeholder="Enter your username"/>
+                </div>
+                <div class="form-group my-2">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Enter your password" />
+                </div>
+                <button type="submit" class="btn btn-success my-4 px-4 mx-2" >SingIn</button>
+
+            </form>
+        </div>
+    </div>
+</div>

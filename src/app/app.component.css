@@ -1,0 +1,8 @@
+/* Custom CSS to add bottom border to the button */
+.btn-bottom-border {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    border-bottom-width: 1px;
+  }

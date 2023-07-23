@@ -1,0 +1,48 @@
+<section class="mt-5">
+    <div class="container "  *ngIf="tutorials.length !== 0 ">
+        <div class="card col-md-8 mx-auto">
+            <div class="card-header"><h4 class="p-2">List des tutorials</h4></div>
+            <div class="card-body">
+                <div *ngIf="message" class="alert alert-success" role="alert">
+                    {{message}}
+                  </div>
+                <table class="table text-center ">
+                    <thead>
+                        <tr>
+                            <th class="p-2">ID</th>
+                            <th class="p-2">Title</th>
+                            <th class="p-2">Description</th>
+                            <th class="p-2">Published</th>
+                            <th class="p-2 " colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tutorial of tutorials">
+                            <td class="p-2">{{tutorial.id}}</td>
+                            <td class="p-2">{{tutorial.title}}</td>
+                            <td class="p-2">{{tutorial.description}}</td>
+                            <td class="p-2">{{tutorial.published}}</td>
+                            <td class="p-2"><a class="btn btn-danger" (click)="delete(tutorial.id)">Delete</a></td>
+                            <td class="p-2"><a class="btn btn-success text-light" (click)="handleupdate(tutorial)">Update</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="nav nav-pills">
+                    <li *ngFor="let page of [].constructor(this.totalPage) let i='index';">
+                        <button class="btn btn-outline-primary m-1" (click)="paginate(i)" [ngClass]="this.currentPage == (i)?'btn btn-primary text-light':'btn btn-outline-primary '" >{{i+1}}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+
+    <div *ngIf="tutorials == null || tutorials.length === 0 " class="mt-5 col-md-8 mx-auto">
+        <div class="card">
+            <div class="card-header">Info</div>
+            <div class="card-body">
+                Please upload a file! No content is found
+            </div>
+        </div>
+    </div>
+</section>
